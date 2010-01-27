@@ -9,7 +9,7 @@ describe 'Minesweeper'
 		htmlElement.should.have_id 'board'
 		htmlElement.children().should.be_empty
 
-		m = new Minesweeper(htmlElement)
+		m = new Minesweeper(htmlElement,1,1)
 		
 		htmlElement.find('table').should.have_length 1
 		
@@ -23,7 +23,8 @@ describe 'Minesweeper'
 		table = htmlElement.find('table')
 		
 		table.find('tr').should.have_length 2
-	
+		table.find('td').should.have_length 6
+		
 	end
 
   end
