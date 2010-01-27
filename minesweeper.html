@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>minesweeper</title>
+		
+		<script type="text/javascript" src="spec/support/jquery.js"></script>
+		<script type="text/javascript" src="lib/minesweeper.js"></script>
+		
+		<style type="text/css" media="screen">
+			table, td {
+				border:1px solid
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="campo"></div>
+		<script type="text/javascript" charset="utf-8">
+		
+			var b = new Minesweeper($('#campo'),5,7);
+			
+		</script>
+	</body>
+</hmtl>
