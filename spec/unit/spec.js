@@ -32,7 +32,7 @@ describe 'Minesweeper'
 
 	it 'should bum when the only mine-cell is open'
 		m = new Minesweeper('board', 1, 1, 1)
-		m.open(1,1)
+		m.open(0,0)
 		m.bum().should.be true
 	end
 
@@ -47,12 +47,12 @@ describe 'Minesweeper'
 		end
 		
 		it 'should not bum when the only safe-cell is open'
-			m.open(1,1)
+			m.open(0,0)
 			m.bum().should.be false
 		end
 
 		it 'should win when the only safe-cell is open'
-			m.open(1,1)
+			m.open(0,0)
 			m.win().should.be true
 		end
 		
@@ -64,16 +64,16 @@ describe 'Minesweeper'
 	
 		before_each
 			m = new Minesweeper('board', 1, 2, 0)
-			m.install_mine(1,1)
+			m.install_mine(0,0)
 		end
 	
-		it 'should bum at 1,1'
-			m.open(1,1)
+		it 'should bum at 0,0'
+			m.open(0,0)
 			m.bum().should.be true
 		end
 
-		it 'should not bum at 1,2'
-			m.open(1,2)
+		it 'should not bum at 0,1'
+			m.open(0,1)
 			m.bum().should.be false
 		end
 	
