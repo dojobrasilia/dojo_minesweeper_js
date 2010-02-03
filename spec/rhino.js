@@ -1,5 +1,5 @@
 load('spec/support/env.js')
-Envjs('spec/fixtures/teste.html')
+Envjs('spec/fixtures/foo.html')
 load('spec/support/jquery.js')
 
 load('/Users/Bruno/.gem/ruby/1.8/gems/jspec-3.1.3/lib/jspec.js')

@@ -1,26 +1,29 @@
 
+// TODO: fixtures
+
 describe 'Minesweeper'
   describe 'init'
 
+	before_each
+		container = $('#board');
+		container.empty();
+	end
+
 	it 'should draw a table for the board'
 
-		htmlElement = $(fixture('teste'))
-		
-		htmlElement.should.have_id 'board'
-		htmlElement.children().should.be_empty
+		container.should.have_id 'board'
+		container.children().should.be_empty
 
-		m = new Minesweeper(htmlElement,1,1)
+		m = new Minesweeper('board',1,1)
 		
-		htmlElement.find('table').should.have_length 1
+		container.find('table').should.have_length 1
 		
 	end
 
 	it 'should draw 2 lines x 3 cols'
 	
-		htmlElement = $(fixture('teste'))
-		
-		m = new Minesweeper(htmlElement, 2, 3)
-		table = htmlElement.find('table')
+		m = new Minesweeper('board', 2, 3)
+		table = container.find('table')
 		
 		table.find('tr').should.have_length 2
 		table.find('td').should.have_length 6
