@@ -19,7 +19,7 @@ describe 'Minesweeper'
 		container.find('table').should.have_length 1
 		
 	end
-
+	
 	it 'should draw 2 lines x 3 cols'
 	
 		m = new Minesweeper('board', 2, 3)
@@ -27,6 +27,30 @@ describe 'Minesweeper'
 		
 		table.find('tr').should.have_length 2
 		table.find('td').should.have_length 6
+		
+	end
+
+	it 'should bum when the only mine-cell is open'
+		m = new Minesweeper('board', 1, 1, 1)
+		m.open(1,1)
+		m.bum().should.be true
+	end
+
+	describe 'with only one safe cell'
+		
+		before_each
+			m = new Minesweeper('board', 1, 1, 0)
+		end
+
+		it 'should not bum when the only safe-cell is open'
+			m.open(1,1)
+			m.bum().should.be false
+		end
+
+		it 'should win when the only safe-cell is open'
+			m.open(1,1)
+			m.win().should.be true
+		end
 		
 	end
 
