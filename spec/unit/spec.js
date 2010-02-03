@@ -42,6 +42,10 @@ describe 'Minesweeper'
 			m = new Minesweeper('board', 1, 1, 0)
 		end
 
+		it 'should not win if the cell is not open'
+			m.win().should.be false
+		end
+		
 		it 'should not bum when the only safe-cell is open'
 			m.open(1,1)
 			m.bum().should.be false
@@ -52,6 +56,27 @@ describe 'Minesweeper'
 			m.win().should.be true
 		end
 		
+		//TODO it 'should not alow more mines than cells'
+		
+	end
+	
+	describe 'with two cells, one mine'
+	
+		before_each
+			m = new Minesweeper('board', 1, 2, 0)
+			m.install_mine(1,1)
+		end
+	
+		it 'should bum at 1,1'
+			m.open(1,1)
+			m.bum().should.be true
+		end
+
+		it 'should not bum at 1,2'
+			m.open(1,2)
+			m.bum().should.be false
+		end
+	
 	end
 
   end
