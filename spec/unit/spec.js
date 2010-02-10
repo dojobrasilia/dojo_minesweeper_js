@@ -38,7 +38,8 @@ describe 'Minesweeper'
 	describe 'open'
 
 		it 'should bum when the only mine-cell is open'
-			m = new Minesweeper('board', 1, 1, 1)
+			m = new Minesweeper('board', 1, 1)
+			m.install_mine(0,0)
 			m.open(0,0)
 			m.hasExploded().should.be true
 		end
@@ -46,7 +47,7 @@ describe 'Minesweeper'
 		describe 'with only one safe cell'
 		
 			before_each
-				m = new Minesweeper('board', 1, 1, 0)
+				m = new Minesweeper('board', 1, 1)
 			end
 
 			it 'should not win if the cell is not open'
@@ -67,22 +68,10 @@ describe 'Minesweeper'
 		
 		end
 	
-		describe 'install mine'
-			before_each
-				m = new Minesweeper('board', 1, 3, 0)
-			end
-			
-			it 'should not install 2 mines on the same cell'
-				m.install_mine(0,0)
-				m.install_mine(0,0)
-				m.getMines().should.be 1
-			end
-		end
-	
 		describe 'with two cells, one mine'
 	
 			before_each
-				m = new Minesweeper('board', 1, 2, 0)
+				m = new Minesweeper('board', 1, 2)
 				m.install_mine(0,0)
 			end
 	
@@ -111,7 +100,7 @@ describe 'Minesweeper'
 		describe 'with three cells, one mine'
 		
 			before_each
-				m = new Minesweeper('board', 1, 3, 0)
+				m = new Minesweeper('board', 1, 3)
 				m.install_mine(0,0)
 			end
 
@@ -120,10 +109,15 @@ describe 'Minesweeper'
 				m.hasExploded().should.be false
 				m.win().should.be false
 			end
+			
+			it 'should not install 2 mines on the same cell'
+				m.install_mine(0,0)
+				m.open(0,1)
+				m.win().should.be false
+			end
 		
 		end
 		
-		// TODO corrigir instalação de bombas no construtor
 		// TODO sorteio de minas
 
 	end
