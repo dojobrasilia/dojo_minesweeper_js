@@ -67,6 +67,18 @@ describe 'Minesweeper'
 		
 		end
 	
+		describe 'install mine'
+			before_each
+				m = new Minesweeper('board', 1, 3, 0)
+			end
+			
+			it 'should not install 2 mines on the same cell'
+				m.install_mine(0,0)
+				m.install_mine(0,0)
+				m.getMines().should.be 1
+			end
+		end
+	
 		describe 'with two cells, one mine'
 	
 			before_each
@@ -113,6 +125,7 @@ describe 'Minesweeper'
 		
 		// TODO corrigir instalação de bombas no construtor
 		// TODO sorteio de minas
+
 	end
 	
 end
