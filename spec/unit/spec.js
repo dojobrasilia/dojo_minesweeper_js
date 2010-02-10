@@ -97,7 +97,7 @@ describe 'Minesweeper'
 	
 		end
 
-		describe 'with three cells, one mine'
+		describe 'with three cells, one mine at 0, 0'
 		
 			before_each
 				m = new Minesweeper('board', 1, 3)
@@ -115,11 +115,15 @@ describe 'Minesweeper'
 				m.open(0,1)
 				m.win().should.be false
 			end
+
+			it 'should win when open the 2 safe cells'
+				m.open(0,1)
+				m.open(0,2)
+				m.win().should.be true
+			end
 		
 		end
 		
-		// TODO sorteio de minas
-
 	end
 	
 end
