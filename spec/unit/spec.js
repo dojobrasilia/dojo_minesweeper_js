@@ -106,12 +106,13 @@ describe 'Minesweeper'
 			it 'should bum at 0,1'
 				m.open(0,1)
 				m.hasExploded().should.be false
-				m.win().shoud.be false
+				m.win().should.be false
 			end
 		
 		end
 		
-		
+		// TODO corrigir instalação de bombas no construtor
+		// TODO sorteio de minas
 	end
 	
 end
