@@ -140,6 +140,18 @@ describe 'Minesweeper'
 			called.should.be true
 		end
 		
+		it 'should call open with the right coordinates'
+			m = new Minesweeper('board',1,2)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 1
+				called = true;
+			}
+ 			container.find('td:first-child').next().click()
+			called.should.be true
+		end
+		
 	end
 	
 end
