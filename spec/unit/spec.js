@@ -98,6 +98,17 @@ describe 'Minesweeper'
 
 		describe 'with three cells, one mine'
 		
+			before_each
+				m = new Minesweeper('board', 1, 3, 0)
+				m.install_mine(0,0)
+			end
+
+			it 'should bum at 0,1'
+				m.open(0,1)
+				m.hasExploded().should.be false
+				m.win().shoud.be false
+			end
+		
 		end
 		
 		
