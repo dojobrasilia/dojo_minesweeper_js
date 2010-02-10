@@ -152,6 +152,18 @@ describe 'Minesweeper'
 			called.should.be true
 		end
 		
+		it 'should call open with the right coordinates with 3 cells'
+			m = new Minesweeper('board',1,3)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 2
+				called = true;
+			}
+ 			container.find('td:last-child').click()
+			called.should.be true
+		end
+		
 	end
 	
 end
