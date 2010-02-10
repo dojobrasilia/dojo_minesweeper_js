@@ -64,8 +64,6 @@ describe 'Minesweeper'
 				m.win().should.be true
 			end
 		
-			//TODO it 'should not alow more mines than cells'
-		
 		end
 	
 		describe 'with two cells, one mine'
@@ -165,5 +163,9 @@ describe 'Minesweeper'
 		end
 		
 	end
+	
+	// TODO cores diferentes para celulas abertas, e com minas
+	// Mostrar números
+	
 	
 end
