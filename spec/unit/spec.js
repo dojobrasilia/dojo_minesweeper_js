@@ -126,4 +126,20 @@ describe 'Minesweeper'
 		
 	end
 	
+	describe 'click in the td'
+		
+		it 'should call open'
+			m = new Minesweeper('board',1,1)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 0
+				called = true;
+			}
+			container.find('td').click()
+			called.should.be true
+		end
+		
+	end
+	
 end
