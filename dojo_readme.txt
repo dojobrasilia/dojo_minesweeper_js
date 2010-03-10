@@ -74,3 +74,43 @@
 	Pra próxima: 
 		- colocar uma lista de inscrições pra pilotar
 		
+		
+10/mar/2010
+
+	Daniel Pedroso
+	Paulo Soares
+	Reinaldo Barreto
+	Adam (chegou no fim)
+	Daniel Maffioletti
+	Bruno Rosa
+	Fabrício Buzeto
+	Thiago Albuquerque
+	Bruno Pedroso
+	
+	retro:
+	
+	:-)
+	- implementamos uma funcionalidade completa
+	- muita gente nova
+	- introdução de TDD pros novos
+	- JSpec (novos)
+	
+	:-(
+	- faltou o pessoal que participou antes
+	- faltou a pizza
+	
+	
+	O que parece faltar pra acabar o jogo:
+	- colorir as células abertas/fechado
+	- explodir
+	- mostrar uma mensagem de que ganhou
+	- centralizar o número na células
+	- abrir as vizinhas dos zeros
+	- marcar a bomba (botão direito?)
+	- sorteio das bombas
+	- botão de reset
+	- layout do tabuleiro
+	
+	
+	
+	

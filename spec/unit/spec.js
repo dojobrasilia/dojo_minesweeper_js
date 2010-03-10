@@ -162,6 +162,16 @@ describe 'Minesweeper'
 			called.should.be true
 		end
 		
+		it 'should show the number of neighbor mines in a non-mine cell'
+			m = new Minesweeper('board',1,3)
+			m.open = function(l,c) {
+				return 34;
+			}
+			cell = container.find('td:first-child').next()
+			cell.click()
+			cell.text().should.be '34'
+		end
+		
 	end
 	
 	// TODO cores diferentes para celulas abertas, e com minas
