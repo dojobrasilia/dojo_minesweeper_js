@@ -202,6 +202,23 @@ describe 'Minesweeper'
 
 		end
 	
+		describe 'in a 3x3 cells board'
+		
+			before_each
+				m = new Minesweeper('board', 3, 3)
+				m.install_mine(0,0)
+				m.install_mine(0,1)
+				m.install_mine(1,0)
+				m.install_mine(2,0)
+				m.install_mine(2,2)
+			end
+			
+			it 'should have 5 neighbor bombs'
+				m.open(1,1).should.be 5
+			end
+
+		end
+	
 	end
 	
 	
