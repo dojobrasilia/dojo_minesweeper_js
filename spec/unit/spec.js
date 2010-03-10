@@ -102,7 +102,7 @@ describe 'Minesweeper'
 				m.install_mine(0,0)
 			end
 
-			it 'should bum at 0,1'
+			it 'should not bum and not win at 0,1'
 				m.open(0,1)
 				m.hasExploded().should.be false
 				m.win().should.be false
@@ -165,7 +165,46 @@ describe 'Minesweeper'
 	end
 	
 	// TODO cores diferentes para celulas abertas, e com minas
+	
+	
 	// Mostrar números
+	
+	describe 'return of open method'
+	
+		describe 'in a two cells board with one mine'
+		
+			before_each
+				m = new Minesweeper('board', 1, 2)
+				m.install_mine(0,0)
+			end
+		
+			it 'should show 1 neighbor on 0,1'
+				m.open(0,1).should.be 1
+			end
+
+			it 'should show * on 0,0'
+				m.open(0,0).should.be '*'
+			end
+			
+		end
+		
+		describe 'in a 2x2 cells board'
+		
+			before_each
+				m = new Minesweeper('board', 2, 2)
+			end
+			
+			it 'should be two with 2 neighbor bombs'
+				m.install_mine(0,0)
+				m.install_mine(0,1)
+				m.open(1,1).should.be 2
+			end
+
+		end
+	
+	end
+	
+	
 	
 	
 end
