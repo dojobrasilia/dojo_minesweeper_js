@@ -34,8 +34,59 @@ describe 'Minesweeper'
 
 
 	end
+
+	describe 'click in the td'
+		
+
+		it 'should call open'
+			m = new Minesweeper('board',1,1)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 0
+				called = true;
+			}
+			container.find('td').click()
+			called.should.be true
+		end
+		
+		it 'should call open with the right coordinates'
+			m = new Minesweeper('board',1,2)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 1
+				called = true;
+			}
+ 			container.find('td:first-child').next().click()
+			called.should.be true
+		end
+		
+		it 'should call open with the right coordinates with 3 cells'
+			m = new Minesweeper('board',1,3)
+			var called = false;
+			m.open = function(l,c) {
+				l.should.be 0
+				c.should.be 2
+				called = true;
+			}
+ 			container.find('td:last-child').click()
+			called.should.be true
+		end
+		
+		it 'should show the number of neighbor mines in a non-mine cell'
+			m = new Minesweeper('board',1,3)
+			m.open = function(l,c) {
+				return 34;
+			}
+			cell = container.find('td:first-child').next()
+			cell.click()
+			cell.text().should.be '34'
+		end
+		
+	end
 	
-	describe 'open'
+	describe 'open method'
 
 		it 'should bum when the only mine-cell is open'
 			m = new Minesweeper('board', 1, 1)
@@ -66,7 +117,7 @@ describe 'Minesweeper'
 		
 		end
 	
-		describe 'with two cells, one mine'
+		describe 'with two cells, one mine at 0,0'
 	
 			before_each
 				m = new Minesweeper('board', 1, 2)
@@ -122,116 +173,65 @@ describe 'Minesweeper'
 		
 		end
 		
+		describe 'return value'
+
+			describe 'in a two cells board with one mine at 0,0'
+
+				before_each
+					m = new Minesweeper('board', 1, 2)
+					m.install_mine(0,0)
+				end
+
+				it 'should return 1 neighbor on 0,1'
+					m.open(0,1).should.be 1
+				end
+
+				it 'should return * on 0,0'
+					m.open(0,0).should.be '*'
+				end
+
+			end
+
+			describe 'in a 2x2 cells board'
+
+				before_each
+					m = new Minesweeper('board', 2, 2)
+				end
+
+				it 'should be two with 2 neighbor bombs'
+					m.install_mine(0,0)
+					m.install_mine(0,1)
+					m.open(1,1).should.be 2
+				end
+
+			end
+
+			describe 'in a 3x3 cells board'
+
+				before_each
+					m = new Minesweeper('board', 3, 3)
+					m.install_mine(0,0)
+					m.install_mine(0,1)
+					m.install_mine(1,0)
+					m.install_mine(2,0)
+					m.install_mine(2,2)
+				end
+
+				it 'should have 5 neighbor bombs'
+					m.open(1,1).should.be 5
+				end
+
+			end
+
+		end
+		
 	end
 	
-	describe 'click in the td'
-		
-		it 'should call open'
-			m = new Minesweeper('board',1,1)
-			var called = false;
-			m.open = function(l,c) {
-				l.should.be 0
-				c.should.be 0
-				called = true;
-			}
-			container.find('td').click()
-			called.should.be true
-		end
-		
-		it 'should call open with the right coordinates'
-			m = new Minesweeper('board',1,2)
-			var called = false;
-			m.open = function(l,c) {
-				l.should.be 0
-				c.should.be 1
-				called = true;
-			}
- 			container.find('td:first-child').next().click()
-			called.should.be true
-		end
-		
-		it 'should call open with the right coordinates with 3 cells'
-			m = new Minesweeper('board',1,3)
-			var called = false;
-			m.open = function(l,c) {
-				l.should.be 0
-				c.should.be 2
-				called = true;
-			}
- 			container.find('td:last-child').click()
-			called.should.be true
-		end
-		
-		it 'should show the number of neighbor mines in a non-mine cell'
-			m = new Minesweeper('board',1,3)
-			m.open = function(l,c) {
-				return 34;
-			}
-			cell = container.find('td:first-child').next()
-			cell.click()
-			cell.text().should.be '34'
-		end
-		
-	end
 	
 	// TODO cores diferentes para celulas abertas, e com minas
 	
 	
 	// Mostrar números
-	
-	describe 'return of open method'
-	
-		describe 'in a two cells board with one mine'
-		
-			before_each
-				m = new Minesweeper('board', 1, 2)
-				m.install_mine(0,0)
-			end
-		
-			it 'should show 1 neighbor on 0,1'
-				m.open(0,1).should.be 1
-			end
-
-			it 'should show * on 0,0'
-				m.open(0,0).should.be '*'
-			end
-			
-		end
-		
-		describe 'in a 2x2 cells board'
-		
-			before_each
-				m = new Minesweeper('board', 2, 2)
-			end
-			
-			it 'should be two with 2 neighbor bombs'
-				m.install_mine(0,0)
-				m.install_mine(0,1)
-				m.open(1,1).should.be 2
-			end
-
-		end
-	
-		describe 'in a 3x3 cells board'
-		
-			before_each
-				m = new Minesweeper('board', 3, 3)
-				m.install_mine(0,0)
-				m.install_mine(0,1)
-				m.install_mine(1,0)
-				m.install_mine(2,0)
-				m.install_mine(2,2)
-			end
-			
-			it 'should have 5 neighbor bombs'
-				m.open(1,1).should.be 5
-			end
-
-		end
-	
-	end
-	
-	
 	
 	
 end

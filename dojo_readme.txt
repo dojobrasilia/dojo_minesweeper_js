@@ -101,16 +101,22 @@
 	
 	
 	O que parece faltar pra acabar o jogo:
+
+	- sorteio das bombas
+	- abrir as vizinhas dos zeros
+	
+	- contador de tempo
+	
+	- marcar a bomba (botão direito?)
+	- botão do meio (abre as vizinhas de celulas cujas bombas vizinhas já foram marcadas)
+	
 	- colorir as células abertas/fechado
 	- explodir
 	- mostrar uma mensagem de que ganhou
-	- centralizar o número na células
-	- abrir as vizinhas dos zeros
-	- marcar a bomba (botão direito?)
-	- sorteio das bombas
 	- botão de reset
-	- layout do tabuleiro
 	
+	- layout do tabuleiro
+	- centralizar o número na células
 	
 	
 	
