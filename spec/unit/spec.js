@@ -86,6 +86,48 @@ describe 'Minesweeper'
 		
 	end
 	
+	describe 'install_mine'
+	
+		it 'should not install 2 mines on the same cell'
+			m.install_mine(0,0)
+			m.open(0,1)
+			m.win().should.be false
+		end
+	
+		it 'should not install outside the board'
+		
+			try {
+				m.install_mine(0,3);
+				fail('should have thrown exception');
+			} catch (e) {	
+				e.should.be "mine out of bounds"
+			}
+
+			try {
+				m.install_mine(3,0);
+				fail('should have thrown exception');
+			} catch (e) {	
+				e.should.be "mine out of bounds"
+			}
+		
+			try {
+				m.install_mine(0,-1);
+				fail('should have thrown exception');
+			} catch (e) {	
+				e.should.be "mine out of bounds"
+			}
+		
+			try {
+				m.install_mine(-1,0);
+				fail('should have thrown exception');
+			} catch (e) {	
+				e.should.be "mine out of bounds"
+			}
+		
+		end
+	
+	end
+	
 	describe 'open method'
 
 		it 'should bum when the only mine-cell is open'
@@ -159,35 +201,6 @@ describe 'Minesweeper'
 				m.win().should.be false
 			end
 			
-			it 'should not install 2 mines on the same cell'
-				m.install_mine(0,0)
-				m.open(0,1)
-				m.win().should.be false
-			end
-			
-			it 'should not install outside the board'
-				
-				try {
-					m.install_mine(0,3);
-					fail('should have thrown exception');
-				} catch (e) {	
-					e.should.be "mine out of bounds"
-				}
-				
-			end
-
-			it 'should not install outside the board down'
-				
-				try {
-					m.install_mine(0,-1);
-					fail('should have thrown exception');
-				} catch (e) {	
-					e.should.be "mine out of bounds"
-				}
-				
-			end
-
-
 			it 'should win when open the 2 safe cells'
 				m.open(0,1)
 				m.open(0,2)
