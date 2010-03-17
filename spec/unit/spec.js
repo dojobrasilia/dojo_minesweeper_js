@@ -229,7 +229,7 @@ describe 'Minesweeper'
 	
 	describe 'random mines method'
 	
-		it 'should install aleatory mines'
+		it 'should install 2 mines'
 			
 			m = new Minesweeper('board', 3, 3)
 			m.random_install_mines(2)
@@ -237,6 +237,16 @@ describe 'Minesweeper'
 			m.mines.should.be 2
 			
 		end
+		
+		it 'should install 3 mines'
+			
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(3)
+			
+			m.mines.should.be 3
+			
+		end
+		
 	
 	end
 	
