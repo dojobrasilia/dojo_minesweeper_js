@@ -283,14 +283,14 @@ describe 'Minesweeper'
 			
 		end
 		
-		// it 'should install 4 mines'
-		// 	
-		// 	m = new Minesweeper('board', 3, 3)
-		// 	m.random_install_mines(4)
-		// 	
-		// 	m.mines.should.be 4
-		// 	
-		// end
+		it 'should install 4 mines'
+			
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(4)
+			
+			m.mines.should.be 4
+			
+		end
 		
 		
 		
