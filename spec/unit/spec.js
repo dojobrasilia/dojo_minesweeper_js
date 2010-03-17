@@ -227,6 +227,18 @@ describe 'Minesweeper'
 		
 	end
 	
+	describe 'random mines method'
+	
+		it 'should install aleatory mines'
+			
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(2)
+			
+			m.mines.should.be 2
+			
+		end
+	
+	end
 	
 	// TODO cores diferentes para celulas abertas, e com minas
 	
