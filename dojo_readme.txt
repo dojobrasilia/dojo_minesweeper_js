@@ -118,5 +118,28 @@
 	- layout do tabuleiro
 	- centralizar o número na células
 	
+
 	
+	17/mar/2010
+
+		Daniel Pedroso
+		Paulo Soares
+		Daniel Maffioletti
+		Thiago Albuquerque
+		Bruno Pedroso
+
+		retro:
+
+	:-)
+		- todo mundo programou
+		- restruturamos o código do teste
+		- usamos exceção JS
+		- descobrimos um caso não testado: mineOutOfBounds
+		- hj tem pizza!
+		
+	:-(
+		- teclado do mac
+		- não produziu muito
+		- não conseguimos chegar no teste da aleatoriedade
+		- outra melhoria para propor ao jspec: executar os testes na ordem
 	
