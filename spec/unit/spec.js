@@ -164,6 +164,17 @@ describe 'Minesweeper'
 				m.open(0,1)
 				m.win().should.be false
 			end
+			
+			it 'should not install outside the board'
+				
+				try {
+					m.install_mine(0,3);
+					fail('should have thrown exception');
+				} catch (e) {	
+					e.should.be "mine out of bounds"
+				}
+				
+			end
 
 			it 'should win when open the 2 safe cells'
 				m.open(0,1)
@@ -246,6 +257,17 @@ describe 'Minesweeper'
 			m.mines.should.be 3
 			
 		end
+		
+		// it 'should install 4 mines'
+		// 	
+		// 	m = new Minesweeper('board', 3, 3)
+		// 	m.random_install_mines(4)
+		// 	
+		// 	m.mines.should.be 4
+		// 	
+		// end
+		
+		
 		
 	
 	end
