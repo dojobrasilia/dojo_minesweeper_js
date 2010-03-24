@@ -10,7 +10,6 @@ describe 'Minesweeper'
 
 	describe 'init'
 
-
 		it 'should draw a table for the board'
 
 			container.should.have_id 'board'
@@ -32,6 +31,8 @@ describe 'Minesweeper'
 
 		end
 
+		it 'should construct with number of mines'
+		end
 
 	end
 
@@ -87,8 +88,13 @@ describe 'Minesweeper'
 	end
 	
 	describe 'install_mine'
+
+		before_each
+			m = new Minesweeper('board',1,3)
+			m.install_mine(0,0)
+		end
 	
-		it 'should not install 2 mines on the same cell'
+		it 'should not increment the mine counter when install 2 mines on the same cell'
 			m.install_mine(0,0)
 			m.open(0,1)
 			m.win().should.be false
@@ -336,7 +342,6 @@ describe 'Minesweeper'
 				} else {
 					return 0.2
 				}
-				
 			}
 
 			m = new Minesweeper('board', 3, 3)
@@ -347,6 +352,9 @@ describe 'Minesweeper'
 			m.open(2,2).should.be '*'
 			m.open(0,0).should.be '*'
 			
+		end
+		
+		it 'should recover from installing more mines than cells '
 		end
 		
 	end

@@ -143,3 +143,32 @@
 		- não conseguimos chegar no teste da aleatoriedade
 		- outra melhoria para propor ao jspec: executar os testes na ordem
 	
+	
+	24/mar/2010
+		
+		Daniel Pedroso
+		Bruno Rolim
+		Reinaldo
+		Daniel Maffioletti
+		Thiago Albuquerque
+		Fabrício Buzeto
+		Paulo Soares
+		Bruno Pedroso
+		Edson Ma
+		
+			retro:
+			:-)
+				- apdendemos o failuresOnly
+				- terminou o sorteio
+				- randori fluiu
+				- 
+				
+			:-(
+				- teclado do mac
+				- maioria não programou
+				- 
+			
+	
+		Firulas:
+		- uma classe css nos nossos tds
+		- bug: classe css para isolar o nosso estilo de tabela
