@@ -265,6 +265,14 @@ describe 'Minesweeper'
 	
 	describe 'random mines method'
 	
+		before_each 
+			random_backup = Math.random;
+		end
+		
+		after_each
+			Math.random = random_backup;
+		end
+	
 		it 'should install 2 mines'
 			
 			m = new Minesweeper('board', 3, 3)
@@ -292,9 +300,55 @@ describe 'Minesweeper'
 			
 		end
 		
+		it 'should call Math.random'
+
+			var called = false;
+			Math.random = function() {
+				called=true;
+				return 0;
+			}
+			
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(1)
+			
+			called.should.be true
+
+		end
 		
+		it 'should use the random result as board indexes'
+
+			Math.random = function() {
+				return 0.9;
+			}
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(1)
+
+			m.open(2,2).should.be '*'
+
+		end
 		
-	
+		it 'should shuffle again when the same coordinates are shuffled :-P'
+			
+			var cont=0
+			Math.random = function() {
+				if (cont++ < 4) {
+					return 0.9;
+				} else {
+					return 0.2
+				}
+				
+			}
+
+			m = new Minesweeper('board', 3, 3)
+			m.random_install_mines(2)
+
+			cont.should.be 6
+
+			m.open(2,2).should.be '*'
+			m.open(0,0).should.be '*'
+			
+		end
+		
 	end
 	
 	// TODO cores diferentes para celulas abertas, e com minas
