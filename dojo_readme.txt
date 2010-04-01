@@ -161,7 +161,6 @@
 				- apdendemos o failuresOnly
 				- terminou o sorteio
 				- randori fluiu
-				- 
 				
 			:-(
 				- teclado do mac
