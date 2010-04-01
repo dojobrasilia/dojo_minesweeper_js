@@ -2,13 +2,13 @@
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 	<head>
-		
+
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>minesweeper</title>
-		
+
 		<script type="text/javascript" src="spec/support/jquery.js"></script>
 		<script type="text/javascript" src="lib/minesweeper.js"></script>
-		
+
 		<style type="text/css" media="screen">
 			table {
 				border:1px solid;
@@ -20,17 +20,16 @@
 				height: 20px;
 			}
 		</style>
-		
+
 	</head>
 	<body>
 		<div id="campo"></div>
 		<script type="text/javascript" charset="utf-8">
-		
+
 			var b = new Minesweeper('campo',5,7);
-			b.install_mine(3,3);
-			b.install_mine(2,3);
-			b.install_mine(1,3);
-			
+			b.random_install_mines(5);
+
 		</script>
 	</body>
 </hmtl>
+
