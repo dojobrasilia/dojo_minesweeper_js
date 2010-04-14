@@ -286,10 +286,53 @@ describe 'Minesweeper'
                     m.is_opened(0,2).should_not.be true
                 end
 
+				it 'should open left neighbour of zero'
+                    m = new Minesweeper('board', 1, 3)
+                    m.install_mine(0,0)
+                    m.open(0,2)
+                    m.is_opened(0,1).should.be true
+                end
+
+				it 'should open left and right neighbours of zero'
+                    m = new Minesweeper('board', 1, 4)
+                    m.install_mine(0,0)
+                    m.open(0,2)
+                    m.is_opened(0,1).should.be true
+					m.is_opened(0,3).should.be true
+                end
+
+				it 'should open two left neighbours of zero'
+                    m = new Minesweeper('board', 1, 4)
+                    m.install_mine(0,0)
+                    m.open(0,3)
+                    m.is_opened(0,1).should.be true
+					m.is_opened(0,2).should.be true
+                end
+
+				it 'should open three left neighbours of zero'
+                    m = new Minesweeper('board', 1, 5)
+                    m.install_mine(0,0)
+                    m.open(0,4)
+                    m.is_opened(0,1).should.be true
+                    m.is_opened(0,2).should.be true
+					m.is_opened(0,3).should.be true
+                end
+
+				it 'should open three left neighbours of zero'
+                    m = new Minesweeper('board', 2, 3)
+                    m.install_mine(1,2)
+                    m.open(0,0)
+                    m.is_opened(0,1).should.be true
+                    m.is_opened(1,1).should.be true
+					m.is_opened(1,0).should.be true
+                end
+
                 it 'should open all cells but the mine'
                     m = new Minesweeper('board', 3, 3)
                     m.install_mine(0,0)
-                    m.open(2,2)
+                    
+					m.open(2,2)
+
                     m.is_opened(0,0).should_not.be true
                     m.is_opened(0,1).should.be true
                     m.is_opened(0,2).should.be true
