@@ -201,3 +201,47 @@
                 - Código bagunçado
                 - Atrasou
 
+		
+		14/04/2010
+		
+			Íamos refatorar criando um objeto que representasse a célula e juntasse os dois arrays.
+			A interface não está renderizando as células abertas em cadeia. 
+			
+			- Marcelon Almeida
+			- Edson Ma
+			- Estevão Aguiar
+			- Paulo Soares
+			- Lucivaldo Costa
+			- Fabrício Buzeto
+			- Lucas Fragomeni
+			- Daniel Pedroso
+			- Bruno Pedroso
+			
+			Discussões que ficaram:
+			- quando comitar? comitar no vermelho?
+				- compartilhar x registrar
+				- gti
+			- JSpec permite labels nos testes?
+			- TDD como design x BDUF
+			
+			:-)
+			
+				- Fizemos o teste passar!
+					- aprendizado massa do "var", escopo, etc.
+				- Refatoramos!
+				- Bastante gente
+				- Teve pizza!
+
+			
+			:-(
+
+				- Atrasou! (BP esqueceu o adaptador de video do mac - hardware proprietário)
+				- Barulhento, muita conversa, vários focos de conversa
+				- Telefone do Fabrício tocou
+				- Pouca gente programou
+				- Não fizemos a fila de programação
+				- pizza esfriou e refri esquentou.
+				- Não tivemos linux. Tivemos que usar o mac
+				
+				
+				
