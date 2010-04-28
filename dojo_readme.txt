@@ -244,4 +244,39 @@
 				- Não tivemos linux. Tivemos que usar o mac
 				
 				
-				
+
+		28/04/2010
+		
+		    Refatoramos a representação interna do objeto de dois arrays pra um array de objetos;
+			Terminamos a abertura em cadeia de celulas.
+			 
+			No final a gente teve uma discussão sobre a melhor forma de estruturas as responsas do código (interface x modelo).
+			
+			- Edson Ma
+			- Paulo Soares
+			- Fabrício Buzeto (programou)
+			- Daniel Pedroso
+			- Bruno Pedroso (programou)
+			- Bruno Rolim (programou)
+			- Eduardo Marques
+			- Ian Gallina
+			- Carlos Alberto
+			
+			
+			:-)
+			    - foi produtivo
+			    - testes se mostraram úteis
+			    - corrigimos o código com uma lição aprendida das outras sessões (var)
+			
+			:-(
+			    - Edu demorou a entender
+			    - jspec/js não reportam o erro muito rastreável
+	            - pouca gente programando (3 pessoas)
+	            - desconcentrado
+	            - julio e lucivaldo confirmaram mas não vieram
+    			
+			
+			
+			
+			
+			
