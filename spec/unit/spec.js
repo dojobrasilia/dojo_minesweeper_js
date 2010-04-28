@@ -84,6 +84,31 @@ describe 'Minesweeper'
 			cell.click()
 			cell.text().should.be '34'
 		end
+		
+		it 'should open the neighbor of a zero and show in the html'
+		    m = new Minesweeper('board',1,3)
+		    
+		    cell = container.find('td:first-child').next()
+			cell.click()
+			
+			container.find('td:first-child').text().should.be '0'
+			container.find('td:first-child').next().text().should.be '0'
+			container.find('td:first-child').next().next().text().should.be '0'
+			
+		end
+		
+		it 'should open only the neighbor of the zero and show the right numbers in the html'
+		    m = new Minesweeper('board',1,3)
+		    m.install_mine(0,0)
+		    
+		    cell = container.find('td:first-child').next().next()
+			cell.click()
+			
+			container.find('td:first-child').text().should.be ''
+			container.find('td:first-child').next().text().should.be '1'
+			container.find('td:first-child').next().next().text().should.be '0'
+			
+		end
 
 	end
 
